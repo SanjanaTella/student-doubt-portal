@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #074965, #98b4cf);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glass effect box */
+.container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    width: 380px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Title */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Student */
+.student-btn {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+.student-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Admin */
+.admin-btn {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.admin-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Register link */
+.register {
+    margin-top: 15px;
+}
+
+.register a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Student Doubt Portal</h1>
+    
+    <a href="/login/" class="btn student-btn">Student Login</a>
+    <a href="/admin/" class="btn admin-btn">Admin Login</a>
+
+    <div class="register">
+        <a href="/register/">Register</a>
+    </div>
+</div>
+
+</body>
+</html>

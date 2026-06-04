@@ -1,0 +1,13 @@
+<h2 style="text-align:center;">Edit Doubt</h2>
+
+<form method="POST" style="width:300px; margin:auto;">
+    {% csrf_token %}
+    
+    Subject:
+    <input type="text" name="subject" value="{{ doubt.subject }}"><br><br>
+
+    Doubt:
+    <textarea name="doubt_text">{{ doubt.doubt_text }}</textarea><br><br>
+
+    <button type="submit">Update Doubt</button>
+</form>

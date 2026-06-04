@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Doubt</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(to right, #eef2f3, #ffffff);
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="/dashboard/">Dashboard</a>
+    <a href="/add_doubt/">Add Doubt</a>
+    <a href="/view_doubts/">View Doubts</a>
+    <a href="/logout/">Logout</a>
+</div>
+
+<div class="container">
+    <h2>Add Your Doubt</h2>
+
+    <form method="POST">
+    {% csrf_token %}
+
+    <label>Subject</label>
+    <select name="subject" id="subject" onchange="showCustomSubject()">
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="DBMS">DBMS</option>
+        <option value="Web Technology">Web Technology</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <input type="text" name="custom_subject" id="custom_subject" 
+           placeholder="Enter your subject" style="display:none;">
+
+    <textarea name="doubt_text" placeholder="Write your doubt"></textarea>
+
+    <button type="submit">Submit Doubt</button>
+</form>
+
+<script>
+function showCustomSubject() {
+    var subject = document.getElementById("subject").value;
+    var custom = document.getElementById("custom_subject");
+
+    if(subject == "Other") {
+        custom.style.display = "block";
+    } else {
+        custom.style.display = "none";
+    }
+}
+</script>
+</div>
+
+</body>
+</html>
